@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Highstorm Weather</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body style="background-color: #f6bd60">
+
+<header style="margin-bottom: -35px;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #f6bd60">
+        <div class="container-fluid d-flex justify-content-center w-100">
+            <span class="navbar-brand mb-0 h1 text-white "
+                  style="font-size: 2.5rem; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-family:'Indie Flower', sans-serif; ">
+                Highstorm Weather
+            </span>
+            <form class="d-flex m-2">
+                <input class="form-control me-2 border-black border-2" type="search" placeholder="London"
+                       aria-label="Search" style="background-color: #f7d5a1">
+                <button class="btn btn-outline-dark" type="submit">
+                    Search
+                </button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+<main class="pt-0">
+    <div class="container py-5 d-flex flex-column align-items-center">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card border-black border-2" style="width: 100%; background-color: #f7ede2">
+                    <div class="card-body">
+                        <h4 class="card-text fw-bold">London 22:21 <i class="bi bi-moon-fill"></i></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Temperature -->
+            <div class="col mb-4">
+                <div class="card border-black border-2" style="width: 18rem; background-color: #f7ede2">
+                    <div class="card-body">
+                        <h5 class="card-title">Temperature</h5>
+                        <p id="location-temperature" class="card-text">19&deg Celsius <i class="fas fa-cloud"></i></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Wind -->
+            <div class="col mb-4">
+                <div class="card border-black border-2" style="width: 18rem; background-color: #f7ede2">
+                    <div class="card-body">
+                        <h5 class="card-title">Wind</h5>
+                        <p id="location-wind" class="card-text">8 km/h <i class="fas fa-wind"></i> NE <i
+                                class="fas fa-location-arrow"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="app.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
