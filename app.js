@@ -1,5 +1,3 @@
-
-
 // Stop ppl from selecting text
 const style = document.createElement('style');
 
