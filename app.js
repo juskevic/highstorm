@@ -10,3 +10,18 @@ style.innerHTML = `
 }`;
 
 document.head.appendChild(style);
+
+// Function to fetch weather data from your worker
+async function fetchWeatherData() {
+    const response = await fetch('https://highstorm.max-yushkevich.workers.dev/');
+    const data = await response.json();
+    // Update the UI with the fetched data
+    updateUI(data);
+}
+
+// Function to update the UI with the fetched data
+function updateUI(data) {
+    document.getElementById('location-temperature').textContent = `${data.temperature}° Celsius`;
+    document.getElementById('location-wind').textContent = `${data.windSpeed} km/h ${data.windDirection}`;
+}
+fetchWeatherData();
