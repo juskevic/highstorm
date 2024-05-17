@@ -30,13 +30,39 @@
                   style="font-size: 2.5rem; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-family:'Indie Flower', sans-serif; ">
                 Highstorm (beta)
             </span>
-            <form class="d-flex m-2">
-                <input class="form-control me-2 border-black border-2" type="search" placeholder="London"
+            <form id="location-search" class="d-flex m-2">
+                <input class="form-control me-2 border-black border-2" id="cityName" type="text" placeholder="London"
                        aria-label="Search" style="background-color: #f7d5a1">
                 <button class="btn btn-outline-dark" type="submit">
                     Search
                 </button>
             </form>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const form = document.getElementById('location-search');
+                    const cityNameInput = document.getElementById('cityName');
+
+                    form.addEventListener('submit', async (event) => {
+                        event.preventDefault();
+
+                        const cityName = cityNameInput.value.trim();
+
+                        if (!cityName) {
+                            alert('Please enter a city name.');
+                            return;
+                        }
+
+                        try {
+                            await fetchWeatherData(cityName);
+                        } catch (error) {
+                            console.error('Error fetching weather data:', error);
+                            alert('An error occurred while fetching the weather data.');
+                        }
+                    });
+                });
+            </script>
+
+
         </div>
     </nav>
 </header>

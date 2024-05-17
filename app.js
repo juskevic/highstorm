@@ -12,8 +12,10 @@ style.innerHTML = `
 document.head.appendChild(style);
 
 // Function to fetch weather data from worker
-async function fetchWeatherData() {
-    const response = await fetch('https://highstorm.max-yushkevich.workers.dev/');
+async function fetchWeatherData(location) {
+    const url = `https://highstorm.max-yushkevich.workers.dev/?location=${encodeURIComponent(location)}`;
+
+    const response = await fetch(url);
     const data = await response.json();
     updateUI(data);
     console.log(data);
