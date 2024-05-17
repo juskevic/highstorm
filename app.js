@@ -11,7 +11,6 @@ style.innerHTML = `
 
 document.head.appendChild(style);
 
-// Function to fetch weather data from worker
 async function fetchWeatherData(location) {
     const url = `https://highstorm.max-yushkevich.workers.dev/?location=${encodeURIComponent(location)}`;
 
@@ -21,7 +20,6 @@ async function fetchWeatherData(location) {
     console.log(data);
 }
 
-// Function to update the UI with the fetched data
 function updateUI(data) {
     document.getElementById('location-name').textContent = `${data.name}`;
     document.getElementById('location-temperature').textContent = `${data.main.temp}° Celsius`;
