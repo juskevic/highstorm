@@ -24,5 +24,6 @@ function updateUI(data) {
     document.getElementById('location-name').textContent = `${data.name}`;
     document.getElementById('location-temperature').textContent = `${data.main.temp}° Celsius`;
     document.getElementById('location-wind').textContent = `${data.wind.speed} km/h`;
+    document.getElementById('location-humidity').textContent = `${data.main.humidity} %`;
 }
 fetchWeatherData().catch((error) => console.error('Error:', error));
