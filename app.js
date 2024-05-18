@@ -21,7 +21,7 @@ async function fetchWeatherData(location) {
 }
 
 function updateUI(data) {
-    document.getElementById('location-name').textContent = `${data.name}`;
+    document.getElementById('location-name').textContent = `${data.name} (${data.sys.country})`;
     document.getElementById('location-temperature').textContent = `${data.main.temp}° Celsius`;
     document.getElementById('location-wind').textContent = `${data.wind.speed} km/h`;
     document.getElementById('location-humidity').textContent = `${data.main.humidity} %`;
