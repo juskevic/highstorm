@@ -27,6 +27,7 @@
             --columbia-blue: #cae9ffff;
             --picton-blue: #5fa8d3ff;
         }
+
         #search-button:active {
             transform: scale(0.9);
             transition: all 0.2s ease;
@@ -45,10 +46,12 @@
                 Highstorm
             </span>
             <form id="location-search" class="d-flex m-2">
-                <input class="form-control me-2 border-black border-2 rounded-4" id="cityName" type="text" placeholder="Enter city name..."
+                <input class="form-control me-2 border-black border-2 rounded-4" id="cityName" type="text"
+                       placeholder="Enter city name..."
                        aria-label="Search" style="background-color: ghostwhite">
                 <!--Search button -->
-                <button id="search-button" class="btn btn fw-bold border-black border-2 rounded-4" type="submit" style="color: black; background-color: var(--mint-green)">
+                <button id="search-button" class="btn btn fw-bold border-black border-2 rounded-4" type="submit"
+                        style="color: black; background-color: var(--mint-green)">
                     Search
                 </button>
             </form>
@@ -76,8 +79,6 @@
                     });
                 });
             </script>
-
-
         </div>
     </nav>
 </header>
@@ -87,7 +88,8 @@
     <div class="container py-5 d-flex flex-column align-items-center">
         <div class="row">
             <div class="col-12 mb-4">
-                <div class="card border-black border-2" style="width: 100%; background-color: var(--columbia-blue); color: var(--indigo-dye)">
+                <div class="card border-black border-2"
+                     style="width: 100%; background-color: var(--columbia-blue); color: var(--indigo-dye)">
                     <div class="card-body">
                         <h4 id="location-name" class="card-text fw-bold">
                             Location <i class="bi bi-globe"></i>
@@ -138,6 +140,13 @@
         </div>
     </div>
 </main>
+
+<footer>
+    <p class="text-center bottom-0" style="font-size:0.9em; color:gray;">
+        &copy; makuyoshi.dev. All rights reserved. <br>
+        This project is covered by the MIT License.
+    </p>
+</footer>
 
 <script src="app.js"></script>
 <script src="js/bootstrap.min.js"></script>
