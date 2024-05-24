@@ -11,6 +11,12 @@ style.innerHTML = `
 
 document.head.appendChild(style);
 
+/**
+ * Fetches weather data for a given location.
+ *
+ * @param {string} location - The location for which to fetch weather data.
+ * @return {Promise<void>} - A promise that resolves with the fetched weather data.
+ */
 async function fetchWeatherData(location) {
     const url = `https://highstorm.max-yushkevich.workers.dev/?location=${encodeURIComponent(location)}`;
 
@@ -25,5 +31,6 @@ function updateUI(data) {
     document.getElementById('location-temperature').textContent = `${data.main.temp}° C`;
     document.getElementById('location-wind').textContent = `${data.wind.speed} km/h`;
     document.getElementById('location-humidity').textContent = `${data.main.humidity} %`;
+    document.getElementById('location-clouds').textContent = `${data.clouds.all} %`
 }
 fetchWeatherData().catch((error) => console.error('Error:', error));
