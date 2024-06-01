@@ -1,4 +1,8 @@
-// Stop ppl from selecting text
+/**
+ * Creates a new HTML style element.
+ *
+ * @returns {HTMLElement} The newly created style element.
+ */
 const style = document.createElement('style');
 
 style.innerHTML = `
@@ -26,6 +30,19 @@ async function fetchWeatherData(location) {
     console.log(data);
 }
 
+/**
+ * Updates the UI with the given data.
+ *
+ * @param {Object} data - The weather data to update the UI with.
+ * @param {string} data.name - The name of the location.
+ * @param {string} data.sys.country - The country of the location.
+ * @param {number} data.main.temp - The temperature in degrees Celsius.
+ * @param {number} data.wind.speed - The wind speed in km/h.
+ * @param {number} data.main.humidity - The humidity percentage.
+ * @param {number} data.clouds.all - The cloud coverage percentage.
+ * @param {number} data.sys.sunrise - The sunrise time in Unix timestamp.
+ * @param {number} data.sys.sunset - The sunset time in Unix timestamp.
+ */
 function updateUI(data) {
     document.getElementById('location-name').textContent = `${data.name} (${data.sys.country})`;
     document.getElementById('location-temperature').textContent = `${data.main.temp}° C`;
